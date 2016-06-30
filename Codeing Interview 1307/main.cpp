@@ -7,6 +7,8 @@
 //
 
 #include <iostream>
+#include <map>
+
 using namespace std;
 
 
@@ -28,12 +30,23 @@ Node* meth(Node* p)
 }
 
 
+Node* copy_nodes(Node* nodep){
+    return nodep;
+}
+
+
+Node* create_copy(Node* rootp){
+    map<Node*, Node*> nodemap;
+    Node* new_rootp = copy_nodes(rootp);
+    return new_rootp;
+}
+
 
 // Code to copy a complete node structure or at least the pointers to the nodes
 int main (int argc, char *argv[])
 {
-    Node *n1 = new Node();
-    
+    Node *o = new Node(new Node(NULL, new Node()), new Node());
+    Node *n = create_copy(o);
     
     
     
